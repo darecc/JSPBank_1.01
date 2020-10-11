@@ -1,0 +1,25 @@
+Naszym systemem jest bank ABC Bank
+W banku są klienci (Client), a każdy z nich scharakteryzowany jest przez:
+    - id (ID klienta nadawane przez bazę automatycznie - autoincrement)
+    - imię
+    - nazwisko
+    - password
+    - PESEL
+    - numer konta (10 znaków: 5 stały prefix banku np 51205, a pozostałe 5 znaków to id klienta)
+Klient loguje się do banku podając swój ID oraz hasło
+Na stronie głównej jest formularz logowania i formularz tworzenia konta klienta
+Klient może tworzyć przelewy (klasa Przelew) na inne konta oraz na zewnątrz banku
+Klient może tworzyć lokaty terminowe (klasa Lokata) (lokata może być odnawialna lub nie).
+Każdego dnia uruchomienie systemu sprawdza u wszystkich klientów czy są zlecenia stałe (klasa Zlecenie), czy kończą się jakieś lokaty i czy są może przelewy z innych kont
+Administrator zarządza listą lokat (czas trwania i oprocentowanie lokaty).
+Administrator zarządza (akceptuje) przelewy wchodzące z innych banków (lista przelewów)
+Klient może tworzyć zlecenia stałe (klasa ZlecenieStałe) (przelew określonego dnia określonej kwoty na podane konto (jeśli
+Każda operacja jest zapisywana w tabeli LOGI
+Bank poprzez konto administracyjne (user z uprawnieniami admin) może wysyłać klientom (wszystkim) powiadomienia (klasa Powiadomienie), które w formie wpisów w ciasteczku klienta "wiszą sobie" do czasu ich usunięcia. Powiadomienia dotyczą terminów przerw administracyjnych, zmian w oprocentowaniu lokat
+
+Na każdej stronie w nagłówku jest informacja o zalogowanym użytkowniku (lub nie), linki do stron tworzących konta i logowania się
+Każda strona ma stopkę z informacją o banku, danymi kontaktowymi i liczbą użytkowników obecnie używających strony
+Klient po zalogowaniu się widzi numer i stan swojego konta, listę swoich lokat, swoje zlecenia stałe i powiadomienia od banku
+Klient może zarządzać swoimi lokatami (nowa, zerwij)
+Klient może zarządzać swoimi zleceniami stałymi (nowe, usuń)
+Klient może zarządzać swoimi powiadomieniami (do kosza)
